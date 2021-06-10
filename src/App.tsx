@@ -30,7 +30,7 @@ function Question({
                 name={question.question}
                 onChange={() => setAnswer(question.id, a)}
               />
-              &nbsp;{a}
+              &nbsp;<span dangerouslySetInnerHTML={{ __html: a }}></span>
             </label>
           </li>
         ))}
