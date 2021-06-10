@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "questions",
+      "type": "cosmosDB",
+      "direction": "in",
+      "databaseName": "trivia",
+      "collectionName": "game",
+      "sqlQuery": "SELECT * from c where c.modelType = 'Question'",
+      "connectionStringSetting": "CosmosDBConnection"
+  }
+  
+  ],
+  "scriptFile": "../dist/get-questions/index.js"
+}

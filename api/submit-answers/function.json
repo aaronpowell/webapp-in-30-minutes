@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "answers",
+      "type": "cosmosDB",
+      "databaseName": "trivia",
+      "collectionName": "game",
+      "createIfNotExists": true,
+      "connectionStringSetting": "CosmosDBConnection",
+      "direction": "out"
+  }
+  
+  ],
+  "scriptFile": "../dist/submit-answers/index.js"
+}

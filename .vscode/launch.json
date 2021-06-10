@@ -19,12 +19,23 @@
       "request": "launch",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/api"
+    },
+    {
+      "name": "Attach to Node Functions",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "preLaunchTask": "func: host start"
     }
   ],
   "compounds": [
     {
       "name": "Launch it all 🚀",
-      "configurations": ["Run emulator", "Run frontend", "Run backend"]
+      "configurations": [
+        "Run emulator",
+        "Run frontend",
+        "Run backend"
+      ]
     }
   ]
 }
