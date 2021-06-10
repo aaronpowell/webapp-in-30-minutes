@@ -18,7 +18,7 @@ function Question({
   return (
     <section>
       <h2>
-        {question.question}{" "}
+        <span dangerouslySetInnerHTML={{ __html: question.question }}></span>{" "}
         {question.correct !== undefined ? (question.correct ? "✔" : "❌") : ""}{" "}
       </h2>
       <ul>
